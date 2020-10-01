@@ -1,7 +1,7 @@
 .bug-card{
     position: relative;
-    background-color: #DFF;
-    border: solid 5px #5FF;
+    background-color: rgb(241, 255, 253);
+    border: solid 5px rgb(175, 217, 255);
     padding: 5px;
     margin: 15px 0px;
 }
