@@ -1,7 +1,6 @@
 <div class="card">
     <div>
-        <input type="search" placeholder="Search" #searchText>
-        <button (click)="onSearch(searchText)">Buscar</button>
+        <input (keyup)="onSearch(searchText.value)" type="search" placeholder="Search" #searchText>
     </div>
 
     <div *ngIf="foundIssues && foundIssues.length">
