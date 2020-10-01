@@ -14,7 +14,9 @@ export class BugSearcherComponent implements OnInit {
   constructor( private issuesService:IssuesService) { }
 
   async ngOnInit(): Promise<any> {
-    this.foundIssues= await this.issuesService.getIssues().toPromise();
+    //Initial issue search
+    let promiseResults = await this.issuesService.getIssues().toPromise();
+    this.foundIssues=promiseResults['items'];
   }
 
   public onSearch(searchText:string) {

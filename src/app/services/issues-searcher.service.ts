@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 //Constants
 import { URLS } from '../../environments/environment';
 
@@ -14,7 +14,7 @@ export class IssuesService {
          * @param owner 
          * @param repo 
          */
-    public getIssue(issueNumber:number, owner: string = 'facebook', repo: string = 'react') {
+    public getIssue(issueNumber: number, owner: string = 'facebook', repo: string = 'react') {
         return this.httpClient.get(`${URLS.api}/repos/${owner}/${repo}/issues/${issueNumber}`);
     }
 
@@ -23,7 +23,13 @@ export class IssuesService {
      * @param owner 
      * @param repo 
      */
-    public getIssues(owner: string = 'facebook', repo: string = 'react') {
-        return this.httpClient.get(`${URLS.api}/repos/${owner}/${repo}/issues`);
+    public getIssues(query?: string) {
+        //Building query base string 
+        let q = "repo:facebook/react type:issue state:open";
+        const options = query && query.length ?
+            { params: new HttpParams().set('q', `${q} "${query}" in:title`) }
+            : { params: new HttpParams().set('q', `${q}`) };
+
+        return this.httpClient.get(`${URLS.api}/search/issues`, options);
     }
 }
