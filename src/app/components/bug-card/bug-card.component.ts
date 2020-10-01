@@ -12,10 +12,7 @@ export class BugCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.issue = {
-      title: "This is a bug",
-      description: "lorem ipsum awiur vui"
-    };
+    
   }
 
 }

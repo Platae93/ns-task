@@ -7,7 +7,9 @@ import { AppComponent } from './app.component';
 import { BugSearcherComponent } from './components/bug-searcher/bug-searcher.component';
 import { BugCardComponent } from './components/bug-card/bug-card.component';
 //Services
-import { IssuesService } from './services/isses-searcher.service';
+import { IssuesService } from './services/issues-searcher.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -18,7 +20,8 @@ import { IssuesService } from './services/isses-searcher.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     IssuesService

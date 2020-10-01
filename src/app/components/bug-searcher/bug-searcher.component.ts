@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IssuesService } from 'src/app/services/issues-searcher.service';
 
 @Component({
   selector: 'app-bug-searcher',
@@ -8,13 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class BugSearcherComponent implements OnInit {
 
   // public searchText: string;
-  public foundIssues:Array<any>;
+  public foundIssues;
 
-  constructor() { }
+  constructor( private issuesService:IssuesService) { }
 
-  ngOnInit(): void {
-    this.foundIssues=[{},{},{}];
-    //this.foundIssues= await IssuesService.search("").toPromise();
+  async ngOnInit(): Promise<any> {
+    this.foundIssues= await this.issuesService.getIssues().toPromise();
   }
 
   public onSearch(searchText:string) {

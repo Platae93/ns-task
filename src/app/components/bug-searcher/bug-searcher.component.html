@@ -4,8 +4,9 @@
         <button (click)="onSearch(searchText)">Buscar</button>
     </div>
 
-    <div *ngIf="foundIssues.length">
-        <app-bug-card *ngFor="let foundIssue of foundIssues"></app-bug-card>
+    <div *ngIf="foundIssues && foundIssues.length">
+        <app-bug-card *ngFor="let foundIssue of foundIssues" [issue]="foundIssue"></app-bug-card>
     </div>
 
 </div>
+|
