@@ -6,5 +6,7 @@
     <div *ngIf="foundIssues && foundIssues.length">
         <app-bug-card *ngFor="let foundIssue of foundIssues" [issue]="foundIssue"></app-bug-card>
     </div>
-
+    <div *ngIf="!foundIssues || !foundIssues.length">
+        <p>{{screenMessage}}</p>
+    </div>
 </div>

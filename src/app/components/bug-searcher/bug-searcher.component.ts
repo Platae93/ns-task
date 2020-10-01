@@ -16,12 +16,13 @@ export class BugSearcherComponent implements OnInit {
   constructor(private issuesService: IssuesService) { }
 
   async ngOnInit(): Promise<any> {
-    //Initial issue search
-    let promiseResults = await this.issuesService.getIssues().toPromise();
-    this.foundIssues = promiseResults['items'];
+    //TODO: Change for a beetter loader
+    this.screenMessage='Loading...';
+    //Initial search
+    this.onSearch();
   }
 
-  public onSearch(searchText) {
+  public onSearch(searchText?:string) {
     this.issuesService
       .getIssues(searchText)
       .subscribe(
