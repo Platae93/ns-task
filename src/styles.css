@@ -9,8 +9,8 @@ app-bug-searcher{
     display: inline-block;
     border-radius: 20px;
     background-color: #FFF;
-    left:25%;
-    width: 50%;
+    left:10%;
+    width: 80%;
 }
 
 @media (max-width:60em){

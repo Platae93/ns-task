@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Issue } from '../../interfaces/issue.interface';
+
 
 @Component({
   selector: 'app-bug-card',
@@ -7,12 +9,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BugCardComponent implements OnInit {
 
-  @Input() issue: any;
+  @Input() issue: Issue;
 
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 
 }
