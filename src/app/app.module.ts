@@ -9,6 +9,7 @@ import { BugCardComponent } from './components/bug-card/bug-card.component';
 //Services
 import { IssuesService } from './services/issues-searcher.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AutocompleteSearchbarComponent } from './autocomplete-searchbar/autocomplete-searchbar.component';
 
 
 
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     BugSearcherComponent,
-    BugCardComponent
+    BugCardComponent,
+    AutocompleteSearchbarComponent
   ],
   imports: [
     BrowserModule,

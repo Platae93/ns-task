@@ -1,6 +1,6 @@
 <div class="card">
     <div>
-        <input class="search-bar" (keyup)="onSearch(searchText.value)" type="search" placeholder="Search" #searchText>
+        <app-autocomplete-searchbar></app-autocomplete-searchbar>
     </div>
 
     <div *ngIf="foundIssues && foundIssues.length">
