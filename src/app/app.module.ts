@@ -4,21 +4,21 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 //Components
 import { AppComponent } from './app.component';
+import { AutocompleteSearchbarComponent } from './components/autocomplete-searchbar/autocomplete-searchbar.component';
 import { BugSearcherComponent } from './components/bug-searcher/bug-searcher.component';
 import { BugCardComponent } from './components/bug-card/bug-card.component';
 //Services
 import { IssuesService } from './services/issues-searcher.service';
 import { HttpClientModule } from '@angular/common/http';
-import { AutocompleteSearchbarComponent } from './autocomplete-searchbar/autocomplete-searchbar.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    AutocompleteSearchbarComponent,
     BugSearcherComponent,
-    BugCardComponent,
-    AutocompleteSearchbarComponent
+    BugCardComponent
   ],
   imports: [
     BrowserModule,
