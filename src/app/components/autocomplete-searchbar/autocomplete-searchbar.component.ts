@@ -42,11 +42,11 @@ export class AutocompleteSearchbarComponent implements OnInit {
     );
   }
 
-  public doSearch(searchText) {
+  doSearch(searchText) {
     this.searchText.emit(this.cleanText(searchText));
   }
-          
-  private cleanText(dirtyText: string): string {
+
+  cleanText(dirtyText: string): string {
     //Removing whitespaces before and after the string
     dirtyText = dirtyText.trim();
     //Making searchText lowercase
