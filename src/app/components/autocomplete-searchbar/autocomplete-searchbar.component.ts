@@ -30,7 +30,7 @@ export class AutocompleteSearchbarComponent implements OnInit {
       //Getting the value from the event
       map(event => (event['target'] as HTMLInputElement).value),
       //Just consider the text if the length is greater than the given number, or zero
-      filter(text => text.length > 2||!text.length),
+      filter(text => text.length > 2 || !text.length),
       //Debounce time between keystrokes
       debounceTime(500),
       //Just proceed if diferent
@@ -42,8 +42,18 @@ export class AutocompleteSearchbarComponent implements OnInit {
     );
   }
 
-  public doSearch(searchText) {
-    this.searchText.emit(searchText);
+  doSearch(searchText) {
+    this.searchText.emit(this.cleanText(searchText));
+  }
+
+  cleanText(dirtyText: string): string {
+    //Removing whitespaces before and after the string
+    dirtyText = dirtyText.trim();
+    //Making searchText lowercase
+    dirtyText = dirtyText.toLocaleLowerCase();
+    //Remove special characters
+    dirtyText = dirtyText.replace(/[^a-zA-Z0-9 ]/g, "");
+    return dirtyText;
   }
 
 }
