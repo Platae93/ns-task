@@ -1,7 +1,14 @@
-.bug-card{
+.bug-card {
     position: relative;
     background-color: rgb(241, 255, 253);
     border: solid 5px rgb(175, 217, 255);
     padding: 0px 5px;
     margin: 15px 0px;
+}
+
+.bug-card:hover, .bug-card:focus {
+    background-color: rgb(241, 255, 253);
+    border: solid 5px rgb(0, 132, 255);
+    font-weight: bold;
+    box-shadow: 0px 0px 10px 2px #999;
 }
