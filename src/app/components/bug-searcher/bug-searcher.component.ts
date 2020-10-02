@@ -17,18 +17,20 @@ export class BugSearcherComponent implements OnInit {
 
   async ngOnInit(): Promise<any> {
     //TODO: Change for a beetter loader
-    this.screenMessage='Loading...';
+    this.screenMessage = 'Loading...';
     //Initial search
     this.onSearch();
+    //Initial focus
+    document.getElementById("searchbar").focus();
   }
 
-  public onSearch(searchText?:string) {
+  public onSearch(searchText?: string) {
     this.issuesService
       .getIssues(searchText)
       .subscribe(
         response => {
           this.foundIssues = response['items'];
-          if(!response['items'].length)
+          if (!response['items'].length)
             this.screenMessage = 'No results were found with the given parameters.'
 
         },
@@ -38,6 +40,10 @@ export class BugSearcherComponent implements OnInit {
         }
       );
 
+  }
+
+  public onClick(url) {
+    window.open(url,'_blank');
   }
 
 
