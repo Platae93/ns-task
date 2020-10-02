@@ -20,8 +20,6 @@ export class BugSearcherComponent implements OnInit {
     this.screenMessage = 'Loading...';
     //Initial search
     this.onSearch();
-    //Initial focus
-    document.getElementById("searchbar").focus();
   }
 
   public onSearch(searchText?: string) {
@@ -36,7 +34,7 @@ export class BugSearcherComponent implements OnInit {
         },
         error => {
           this.foundIssues = [];
-          this.screenMessage = `An error ocurred loading the issues. \n ERROR: ${error.toString()}`
+          this.screenMessage = `An error ocurred loading the issues. \n ERROR: ${JSON.parse(error)}`
         }
       );
 

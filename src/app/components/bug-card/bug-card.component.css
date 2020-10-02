@@ -2,8 +2,11 @@
     position: relative;
     background-color: rgb(241, 255, 253);
     border: solid 5px rgb(175, 217, 255);
-    padding: 0px 5px;
+    padding: 15px 10px;
     margin: 15px 0px;
+    display: block;
+    color: inherit;
+    text-decoration: none;
 }
 
 .bug-card:hover, .bug-card:focus {
