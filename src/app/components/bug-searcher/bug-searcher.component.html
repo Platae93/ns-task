@@ -1,10 +1,13 @@
 <div class="card">
     <div>
-        <app-autocomplete-searchbar></app-autocomplete-searchbar>
+        <app-autocomplete-searchbar 
+        (searchText)="onSearch($event)"></app-autocomplete-searchbar>
     </div>
 
     <div *ngIf="foundIssues && foundIssues.length">
-        <app-bug-card *ngFor="let foundIssue of foundIssues" [issue]="foundIssue"></app-bug-card>
+        <app-bug-card 
+        *ngFor="let foundIssue of foundIssues" 
+        [issue]="foundIssue"></app-bug-card>
     </div>
     <div *ngIf="!foundIssues || !foundIssues.length">
         <p>{{screenMessage}}</p>
